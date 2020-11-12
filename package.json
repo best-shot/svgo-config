@@ -1,0 +1,50 @@
+{
+  "name": "svgo-config",
+  "version": "0.1.0",
+  "description": "A svgo config to keep svg files clean",
+  "license": "MIT",
+  "author": {
+    "name": "Eric Chen",
+    "email": "airkro@qq.com"
+  },
+  "homepage": "https://github.com/best-shot/svgo-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/best-shot/svgo-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/best-shot/svgo-config/issues"
+  },
+  "files": [
+    "config.*"
+  ],
+  "scripts": {
+    "format": "nice-move lint"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@nice-move/cli": "^0.5.5",
+    "@nice-move/eslint-config-base": "^0.3.16",
+    "@nice-move/prettier-config": "^0.3.4",
+    "eslint": "^6.8.0",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2"
+  },
+  "engines": {
+    "node": "^10.18 || ^12.14 || ^14"
+  },
+  "commitlint": {
+    "extends": "@commitlint/config-conventional"
+  },
+  "eslintConfig": {
+    "extends": "@nice-move/eslint-config-base"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "nice-move lint"
+    }
+  },
+  "prettier": "@nice-move/prettier-config"
+}
