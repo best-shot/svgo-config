@@ -2,20 +2,356 @@
   "multipass": true,
   "plugins": [
     {
-      "removeDimensions": true
+      "name": "removeDoctype",
+      "type": "perItem",
+      "active": true,
+      "description": "removes doctype declaration"
     },
     {
-      "convertPathData": {
-        "noSpaceAfterFlags": false
+      "name": "removeXMLProcInst",
+      "type": "perItem",
+      "active": true,
+      "description": "removes XML processing instructions"
+    },
+    {
+      "name": "removeComments",
+      "type": "perItem",
+      "active": true,
+      "description": "removes comments"
+    },
+    {
+      "name": "removeMetadata",
+      "type": "perItem",
+      "active": true,
+      "description": "removes <metadata>"
+    },
+    {
+      "name": "removeXMLNS",
+      "type": "perItem",
+      "active": false,
+      "description": "removes xmlns attribute (for inline svg, disabled by default)"
+    },
+    {
+      "name": "removeEditorsNSData",
+      "type": "perItem",
+      "active": true,
+      "description": "removes editors namespaces, elements and attributes",
+      "params": {
+        "additionalNamespaces": []
       }
     },
     {
-      "inlineStyles": {
+      "name": "cleanupAttrs",
+      "type": "perItem",
+      "active": true,
+      "description": "cleanups attributes from newlines, trailing and repeating spaces",
+      "params": {
+        "newlines": true,
+        "trim": true,
+        "spaces": true
+      }
+    },
+    {
+      "name": "inlineStyles",
+      "params": {
         "onlyMatchedOnce": false
       }
     },
     {
-      "removeAttrs": {
+      "name": "minifyStyles",
+      "type": "full",
+      "active": true,
+      "description": "minifies styles and removes unused styles based on usage data",
+      "params": {
+        "usage": {
+          "force": false,
+          "ids": true,
+          "classes": true,
+          "tags": true
+        }
+      }
+    },
+    {
+      "name": "convertStyleToAttrs",
+      "type": "perItem",
+      "active": false,
+      "description": "converts style to attributes",
+      "params": {
+        "keepImportant": false
+      }
+    },
+    {
+      "name": "cleanupIDs",
+      "type": "full",
+      "active": true,
+      "description": "removes unused IDs and minifies used",
+      "params": {
+        "remove": true,
+        "minify": true,
+        "prefix": "",
+        "preserve": [],
+        "preservePrefixes": [],
+        "force": false
+      }
+    },
+    {
+      "name": "prefixIds",
+      "type": "perItem",
+      "active": false,
+      "params": {
+        "delim": "__",
+        "prefixIds": true,
+        "prefixClassNames": true
+      },
+      "description": "prefix IDs"
+    },
+    {
+      "name": "removeRasterImages",
+      "type": "perItem",
+      "active": false,
+      "description": "removes raster images (disabled by default)"
+    },
+    {
+      "name": "removeUselessDefs",
+      "type": "perItem",
+      "active": true,
+      "description": "removes elements in <defs> without id"
+    },
+    {
+      "name": "cleanupNumericValues",
+      "type": "perItem",
+      "active": true,
+      "description": "rounds numeric values to the fixed precision, removes default ‘px’ units",
+      "params": {
+        "floatPrecision": 3,
+        "leadingZero": true,
+        "defaultPx": true,
+        "convertToPx": true
+      }
+    },
+    {
+      "name": "cleanupListOfValues",
+      "type": "perItem",
+      "active": false,
+      "description": "rounds list of values to the fixed precision",
+      "params": {
+        "floatPrecision": 3,
+        "leadingZero": true,
+        "defaultPx": true,
+        "convertToPx": true
+      }
+    },
+    {
+      "name": "convertColors",
+      "type": "perItem",
+      "active": true,
+      "description": "converts colors: rgb() to #rrggbb and #rrggbb to #rgb",
+      "params": {
+        "currentColor": false,
+        "names2hex": true,
+        "rgb2hex": true,
+        "shorthex": true,
+        "shortname": true
+      }
+    },
+    {
+      "name": "removeUnknownsAndDefaults",
+      "type": "perItem",
+      "active": true,
+      "description": "removes unknown elements content and attributes, removes attrs with default values",
+      "params": {
+        "unknownContent": true,
+        "unknownAttrs": true,
+        "defaultAttrs": true,
+        "uselessOverrides": true,
+        "keepDataAttrs": true,
+        "keepAriaAttrs": true,
+        "keepRoleAttr": false
+      }
+    },
+    {
+      "name": "removeNonInheritableGroupAttrs",
+      "type": "perItem",
+      "active": true,
+      "description": "removes non-inheritable group’s presentational attributes"
+    },
+    {
+      "name": "removeUselessStrokeAndFill",
+      "type": "perItem",
+      "active": true,
+      "description": "removes useless stroke and fill attributes",
+      "params": {
+        "stroke": true,
+        "fill": true,
+        "removeNone": false,
+        "hasStyleOrScript": false
+      }
+    },
+    {
+      "name": "removeViewBox",
+      "type": "perItem",
+      "active": true,
+      "description": "removes viewBox attribute when possible"
+    },
+    {
+      "name": "cleanupEnableBackground",
+      "type": "full",
+      "active": true,
+      "description": "remove or cleanup enable-background attribute when possible"
+    },
+    {
+      "name": "removeHiddenElems",
+      "type": "perItem",
+      "active": true,
+      "description": "removes hidden elements (zero sized, with absent attributes)",
+      "params": {
+        "isHidden": true,
+        "displayNone": true,
+        "opacity0": true,
+        "circleR0": true,
+        "ellipseRX0": true,
+        "ellipseRY0": true,
+        "rectWidth0": true,
+        "rectHeight0": true,
+        "patternWidth0": true,
+        "patternHeight0": true,
+        "imageWidth0": true,
+        "imageHeight0": true,
+        "pathEmptyD": true,
+        "polylineEmptyPoints": true,
+        "polygonEmptyPoints": true
+      }
+    },
+    {
+      "name": "removeEmptyText",
+      "type": "perItem",
+      "active": true,
+      "description": "removes empty <text> elements",
+      "params": {
+        "text": true,
+        "tspan": true,
+        "tref": true
+      }
+    },
+    {
+      "name": "convertShapeToPath",
+      "type": "perItem",
+      "active": true,
+      "description": "converts basic shapes to more compact path form",
+      "params": {
+        "convertArcs": false
+      }
+    },
+    {
+      "name": "convertEllipseToCircle",
+      "type": "perItem",
+      "active": true,
+      "description": "converts non-eccentric <ellipse>s to <circle>s"
+    },
+    {
+      "name": "moveElemsAttrsToGroup",
+      "type": "perItemReverse",
+      "active": true,
+      "description": "moves elements attributes to the existing group wrapper"
+    },
+    {
+      "name": "moveGroupAttrsToElems",
+      "type": "perItem",
+      "active": true,
+      "description": "moves some group attributes to the content elements"
+    },
+    {
+      "name": "collapseGroups",
+      "type": "perItemReverse",
+      "active": true,
+      "description": "collapses useless groups"
+    },
+    {
+      "name": "convertPathData",
+      "params": {
+        "noSpaceAfterFlags": false
+      }
+    },
+    {
+      "name": "convertTransform",
+      "type": "perItem",
+      "active": true,
+      "description": "collapses multiple transformations and optimizes it",
+      "params": {
+        "convertToShorts": true,
+        "floatPrecision": 3,
+        "transformPrecision": 5,
+        "matrixToTransform": true,
+        "shortTranslate": true,
+        "shortScale": true,
+        "shortRotate": true,
+        "removeUseless": true,
+        "collapseIntoOne": true,
+        "leadingZero": true,
+        "negativeExtraSpace": false
+      }
+    },
+    {
+      "name": "removeEmptyAttrs",
+      "type": "perItem",
+      "active": true,
+      "description": "removes empty attributes"
+    },
+    {
+      "name": "removeEmptyContainers",
+      "type": "perItemReverse",
+      "active": true,
+      "description": "removes empty container elements"
+    },
+    {
+      "name": "mergePaths",
+      "type": "perItem",
+      "active": true,
+      "description": "merges multiple paths in one if possible",
+      "params": {
+        "collapseRepeated": true,
+        "force": false,
+        "leadingZero": true,
+        "negativeExtraSpace": true,
+        "noSpaceAfterFlags": false
+      }
+    },
+    {
+      "name": "removeUnusedNS",
+      "type": "full",
+      "active": true,
+      "description": "removes unused namespaces declaration"
+    },
+    {
+      "name": "sortAttrs"
+    },
+    {
+      "name": "sortDefsChildren",
+      "type": "perItem",
+      "active": true,
+      "description": "Sorts children of <defs> to improve compression"
+    },
+    {
+      "name": "removeTitle",
+      "type": "perItem",
+      "active": true,
+      "description": "removes <title>"
+    },
+    {
+      "name": "removeDesc",
+      "type": "perItem",
+      "active": true,
+      "params": {
+        "removeAny": true
+      },
+      "description": "removes <desc>"
+    },
+    {
+      "name": "removeDimensions"
+    },
+    {
+      "name": "removeAttrs",
+      "params": {
         "attrs": [
           "data-*",
           "data.*"
@@ -23,7 +359,8 @@
       }
     },
     {
-      "removeAttributesBySelector": {
+      "name": "removeAttributesBySelector",
+      "params": {
         "selector": "svg",
         "attributes": [
           "xml:space",
@@ -32,13 +369,44 @@
       }
     },
     {
-      "sortAttrs": true
+      "name": "removeElementsByAttr",
+      "type": "perItem",
+      "active": false,
+      "description": "removes arbitrary elements by ID or className (disabled by default)",
+      "params": {
+        "id": [],
+        "class": []
+      }
     },
     {
-      "removeScriptElement": true
+      "name": "addClassesToSVGElement",
+      "type": "full",
+      "active": false,
+      "description": "adds classnames to an outer <svg> element"
     },
     {
-      "removeStyleElement": true
+      "name": "removeStyleElement"
+    },
+    {
+      "name": "removeScriptElement"
+    },
+    {
+      "name": "addAttributesToSVGElement",
+      "type": "full",
+      "active": false,
+      "description": "adds attributes to an outer <svg> element"
+    },
+    {
+      "name": "removeOffCanvasPaths",
+      "type": "perItem",
+      "active": false,
+      "description": "removes elements that are drawn outside of the viewbox (disabled by default)"
+    },
+    {
+      "name": "reusePaths",
+      "type": "full",
+      "active": false,
+      "description": "Finds <path> elements with the same d, fill, and stroke, and converts them to <use> elements referencing a single <path> def."
     }
   ]
 }

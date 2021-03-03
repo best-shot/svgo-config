@@ -22,9 +22,9 @@ npm install svgo-config --save-dev
 ## Usage
 
 ```bash
-svgo *.svg --config node_modules/svgo-config/config.yaml
+svgo *.svg --config node_modules/svgo-config/config.json
 ```
 
 ```js
-const config = require('svgo-config/config.json');
+const config = require('svgo-config');
 ```

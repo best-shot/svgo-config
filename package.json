@@ -1,6 +1,6 @@
 {
   "name": "svgo-config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A svgo config to keep svg files clean",
   "license": "MIT",
   "author": {
@@ -15,27 +15,38 @@
   "bugs": {
     "url": "https://github.com/best-shot/svgo-config/issues"
   },
+  "main": "config.cjs",
   "files": [
     "config.*"
   ],
   "scripts": {
-    "format": "nice-move lint"
+    "lint": "nice-move lint"
   },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "@nice-move/cli": "^0.5.5",
-    "@nice-move/eslint-config-base": "^0.3.16",
-    "@nice-move/prettier-config": "^0.3.4",
-    "eslint": "^6.8.0",
-    "husky": "^4.3.0",
-    "prettier": "^2.1.2"
+    "@nice-move/cli": "^0.5.19",
+    "@nice-move/commitlint-config": "^0.1.0",
+    "@nice-move/eslint-config-base": "^0.5.24",
+    "@nice-move/prettier-config": "^0.4.1",
+    "commitlint": "^12.0.1",
+    "eslint": "^7.21.0",
+    "fs-chain": "^5.2.0",
+    "garou": "^0.1.19",
+    "husky": "^4.3.8",
+    "prettier": "^2.2.1",
+    "svgo": "^2.2.0"
+  },
+  "peerDependencies": {
+    "svgo": "^2.2.0"
   },
   "engines": {
-    "node": "^10.18 || ^12.14 || ^14"
+    "node": "^12.18 || ^14"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "commitlint": {
-    "extends": "@commitlint/config-conventional"
+    "extends": "@nice-move/commitlint-config"
   },
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
