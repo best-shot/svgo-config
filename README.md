@@ -1,4 +1,4 @@
-# svgo-config
+# svgo-config <img src="https://cdn.jsdelivr.net/gh/svg/svgo/logo/isotype.svg" alt="logo" height="80" align="right">
 
 A [svgo] config to keep svg files clean.
 

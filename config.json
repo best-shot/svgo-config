@@ -265,8 +265,28 @@
     },
     {
       "name": "convertPathData",
+      "type": "perItem",
+      "active": true,
+      "description": "optimizes path data: writes in shorter form, applies transformations",
       "params": {
-        "noSpaceAfterFlags": false
+        "applyTransforms": true,
+        "applyTransformsStroked": true,
+        "makeArcs": {
+          "threshold": 2.5,
+          "tolerance": 0.5
+        },
+        "straightCurves": true,
+        "lineShorthands": true,
+        "curveSmoothShorthands": true,
+        "floatPrecision": 3,
+        "transformPrecision": 5,
+        "removeUseless": true,
+        "collapseRepeated": true,
+        "utilizeAbsolute": true,
+        "leadingZero": true,
+        "negativeExtraSpace": true,
+        "noSpaceAfterFlags": false,
+        "forceAbsolutePath": false
       }
     },
     {

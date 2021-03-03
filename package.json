@@ -1,6 +1,6 @@
 {
   "name": "svgo-config",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A svgo config to keep svg files clean",
   "license": "MIT",
   "author": {
@@ -20,6 +20,7 @@
     "config.*"
   ],
   "scripts": {
+    "prelint": "node config/action.cjs && git add config.json",
     "lint": "nice-move lint"
   },
   "devDependencies": {
@@ -57,5 +58,8 @@
       "pre-commit": "nice-move lint"
     }
   },
-  "prettier": "@nice-move/prettier-config"
+  "prettier": "@nice-move/prettier-config",
+  "x-readme": {
+    "logo": "https://cdn.jsdelivr.net/gh/svg/svgo/logo/isotype.svg"
+  }
 }

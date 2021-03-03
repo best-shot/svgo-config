@@ -5,12 +5,6 @@ module.exports = {
   plugins: extendDefaultPlugins([
     { name: 'removeDimensions' },
     {
-      name: 'convertPathData',
-      params: {
-        noSpaceAfterFlags: false,
-      },
-    },
-    {
       name: 'convertStyleToAttrs',
       params: {
         keepImportant: true,
