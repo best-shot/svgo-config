@@ -26,5 +26,5 @@ svgo *.svg --config node_modules/svgo-config/config.json
 ```
 
 ```js
-const config = require('svgo-config');
+const config = require('svgo-config/config.json');
 ```

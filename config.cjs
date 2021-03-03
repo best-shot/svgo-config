@@ -11,6 +11,12 @@ module.exports = {
       },
     },
     {
+      name: 'convertStyleToAttrs',
+      params: {
+        keepImportant: true,
+      },
+    },
+    {
       name: 'inlineStyles',
       params: {
         onlyMatchedOnce: false,

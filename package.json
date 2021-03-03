@@ -1,6 +1,6 @@
 {
   "name": "svgo-config",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A svgo config to keep svg files clean",
   "license": "MIT",
   "author": {

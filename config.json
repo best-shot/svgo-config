@@ -73,11 +73,8 @@
     },
     {
       "name": "convertStyleToAttrs",
-      "type": "perItem",
-      "active": false,
-      "description": "converts style to attributes",
       "params": {
-        "keepImportant": false
+        "keepImportant": true
       }
     },
     {
