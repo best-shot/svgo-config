@@ -1,6 +1,6 @@
 {
   "name": "svgo-config",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A svgo config to keep svg files clean",
   "license": "MIT",
   "author": {
@@ -24,23 +24,23 @@
     "lint": "nice-move lint"
   },
   "devDependencies": {
-    "@nice-move/cli": "^0.5.19",
-    "@nice-move/commitlint-config": "^0.1.0",
-    "@nice-move/eslint-config-base": "^0.5.24",
-    "@nice-move/prettier-config": "^0.4.1",
-    "commitlint": "^12.0.1",
-    "eslint": "^7.21.0",
-    "fs-chain": "^5.2.0",
-    "garou": "^0.1.19",
+    "@nice-move/cli": "^0.5.21",
+    "@nice-move/commitlint-config": "^0.1.2",
+    "@nice-move/eslint-config-base": "^0.5.30",
+    "@nice-move/prettier-config": "^0.4.3",
+    "commitlint": "^12.1.1",
+    "eslint": "^7.24.0",
+    "fs-chain": "^5.2.1",
+    "garou": "^0.1.22",
     "husky": "^4.3.8",
     "prettier": "^2.2.1",
-    "svgo": "^2.2.0"
+    "svgo": "^2.3.0"
   },
   "peerDependencies": {
-    "svgo": "^2.2.0"
+    "svgo": "^2.3.0"
   },
   "engines": {
-    "node": "^12.18 || ^14"
+    "node": "^12.15.0 || ^14.15.3"
   },
   "publishConfig": {
     "access": "public",
