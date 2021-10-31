@@ -25,6 +25,6 @@ npm install svgo-config --save-dev
 svgo *.svg --config node_modules/svgo-config/config.json
 ```
 
-```js
+```cjs
 const config = require('svgo-config/config.json');
 ```

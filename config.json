@@ -2,179 +2,7 @@
   "multipass": true,
   "plugins": [
     {
-      "name": "removeDoctype",
-      "active": true
-    },
-    {
-      "name": "removeXMLProcInst",
-      "active": true
-    },
-    {
-      "name": "removeComments",
-      "active": true
-    },
-    {
-      "name": "removeMetadata",
-      "active": true
-    },
-    {
-      "name": "removeXMLNS",
-      "active": false
-    },
-    {
-      "name": "removeEditorsNSData",
-      "active": true
-    },
-    {
-      "name": "cleanupAttrs",
-      "active": true
-    },
-    {
-      "name": "mergeStyles",
-      "active": true
-    },
-    {
-      "name": "inlineStyles",
-      "params": {
-        "onlyMatchedOnce": false
-      }
-    },
-    {
-      "name": "minifyStyles",
-      "active": true
-    },
-    {
-      "name": "convertStyleToAttrs",
-      "params": {
-        "keepImportant": true
-      }
-    },
-    {
-      "name": "cleanupIDs",
-      "active": true
-    },
-    {
-      "name": "prefixIds",
-      "active": false
-    },
-    {
-      "name": "removeRasterImages",
-      "active": false
-    },
-    {
-      "name": "removeUselessDefs",
-      "active": true
-    },
-    {
-      "name": "cleanupNumericValues",
-      "active": true
-    },
-    {
-      "name": "cleanupListOfValues",
-      "active": false
-    },
-    {
-      "name": "convertColors",
-      "active": true
-    },
-    {
-      "name": "removeUnknownsAndDefaults",
-      "active": true
-    },
-    {
-      "name": "removeNonInheritableGroupAttrs",
-      "active": true
-    },
-    {
-      "name": "removeUselessStrokeAndFill",
-      "active": true
-    },
-    {
-      "name": "removeViewBox",
-      "active": true
-    },
-    {
-      "name": "cleanupEnableBackground",
-      "active": true
-    },
-    {
-      "name": "removeHiddenElems",
-      "active": true
-    },
-    {
-      "name": "removeEmptyText",
-      "active": true
-    },
-    {
-      "name": "convertShapeToPath",
-      "active": true
-    },
-    {
-      "name": "convertEllipseToCircle",
-      "active": true
-    },
-    {
-      "name": "moveElemsAttrsToGroup",
-      "active": true
-    },
-    {
-      "name": "moveGroupAttrsToElems",
-      "active": true
-    },
-    {
-      "name": "collapseGroups",
-      "active": true
-    },
-    {
-      "name": "convertPathData",
-      "active": true
-    },
-    {
-      "name": "convertTransform",
-      "active": true
-    },
-    {
-      "name": "removeEmptyAttrs",
-      "active": true
-    },
-    {
-      "name": "removeEmptyContainers",
-      "active": true
-    },
-    {
-      "name": "mergePaths",
-      "active": true
-    },
-    {
-      "name": "removeUnusedNS",
-      "active": true
-    },
-    {
-      "name": "sortAttrs"
-    },
-    {
-      "name": "sortDefsChildren",
-      "active": true
-    },
-    {
-      "name": "removeTitle",
-      "active": true
-    },
-    {
-      "name": "removeDesc",
-      "active": true
-    },
-    {
-      "name": "removeDimensions"
-    },
-    {
-      "name": "removeAttrs",
-      "params": {
-        "attrs": [
-          "data-*",
-          "data.*"
-        ]
-      }
+      "name": "preset-default"
     },
     {
       "name": "removeAttributesBySelector",
@@ -187,30 +15,25 @@
       }
     },
     {
-      "name": "removeElementsByAttr",
-      "active": false
+      "name": "sortAttrs"
     },
     {
-      "name": "addClassesToSVGElement",
-      "active": false
+      "name": "removeAttrs",
+      "params": {
+        "attrs": [
+          "data-*",
+          "data.*"
+        ]
+      }
     },
     {
-      "name": "removeStyleElement"
+      "name": "removeDimensions"
     },
     {
-      "name": "removeScriptElement"
-    },
-    {
-      "name": "addAttributesToSVGElement",
-      "active": false
-    },
-    {
-      "name": "removeOffCanvasPaths",
-      "active": false
-    },
-    {
-      "name": "reusePaths",
-      "active": false
+      "name": "convertStyleToAttrs",
+      "params": {
+        "keepImportant": true
+      }
     }
   ]
 }

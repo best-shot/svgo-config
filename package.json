@@ -1,12 +1,18 @@
 {
   "name": "svgo-config",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A svgo config to keep svg files clean",
   "license": "MIT",
   "author": {
     "name": "Eric Chen",
     "email": "airkro@qq.com"
   },
+  "keywords": [
+    "config",
+    "minify",
+    "svg",
+    "svgo"
+  ],
   "homepage": "https://github.com/best-shot/svgo-config",
   "repository": {
     "type": "git",
@@ -15,32 +21,33 @@
   "bugs": {
     "url": "https://github.com/best-shot/svgo-config/issues"
   },
-  "main": "config.cjs",
-  "files": [
-    "config.*"
-  ],
+  "main": "config.json",
+  "files": [],
   "scripts": {
-    "prelint": "node config/action.cjs && git add config.json",
-    "lint": "nice-move lint"
+    "lint": "nice-move lint",
+    "prepare": "git config core.hooksPath .githooks",
+    "prepublishOnly": "npm run lint && npm test",
+    "test": "ava --fail-fast"
   },
   "devDependencies": {
-    "@nice-move/cli": "^0.5.21",
-    "@nice-move/commitlint-config": "^0.1.2",
-    "@nice-move/eslint-config-base": "^0.5.30",
-    "@nice-move/prettier-config": "^0.4.3",
-    "commitlint": "^12.1.1",
-    "eslint": "^7.24.0",
-    "fs-chain": "^5.2.1",
-    "garou": "^0.1.22",
-    "husky": "^4.3.8",
-    "prettier": "^2.2.1",
-    "svgo": "^2.3.0"
+    "@nice-move/cli": "^0.5.32",
+    "@nice-move/commitlint-config": "^0.2.2",
+    "@nice-move/eslint-config-base": "^0.5.66",
+    "@nice-move/prettier-config": "^0.5.1",
+    "ava": "^3.15.0",
+    "commitlint": "^13.2.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-ava": "^13.1.0",
+    "garou": "^0.2.4",
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1",
+    "svgo": "^2.7.0"
   },
   "peerDependencies": {
-    "svgo": "^2.3.0"
+    "svgo": "^2.7.0"
   },
   "engines": {
-    "node": "^12.15.0 || ^14.15.3"
+    "node": "^12.22.0 || ^14.17.0 || >=16.13.0"
   },
   "publishConfig": {
     "access": "public",
@@ -52,11 +59,13 @@
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "nice-move lint"
-    }
+  "nodemonConfig": {
+    "delay": 5,
+    "exec": "ava --fail-fast",
+    "watch": [
+      "test.cjs",
+      "config.cjs"
+    ]
   },
   "prettier": "@nice-move/prettier-config",
   "x-readme": {
