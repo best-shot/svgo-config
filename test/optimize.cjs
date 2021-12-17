@@ -4,7 +4,7 @@ const test = require('ava');
 
 const { optimize } = require('svgo');
 
-const config = require('./config.json');
+const config = require('../lib/config.json');
 
 const source = `<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <?xml version="1.0" encoding="utf-8"?>
