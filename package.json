@@ -1,6 +1,6 @@
 {
   "name": "svgo-config",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A svgo config to keep svg files clean",
   "license": "MIT",
   "author": {
@@ -33,22 +33,20 @@
   ],
   "type": "module",
   "scripts": {
-    "lint": "nice-move lint",
+    "lint:staged": "nice-move lint staged",
     "prepare": "git config core.hooksPath .githooks",
-    "prepublishOnly": "npm run lint && npm test",
+    "prepublishOnly": "npm run lint:staged && npm test",
     "test": "ava --fail-fast"
   },
   "devDependencies": {
-    "@nice-move/cli": "^0.6.0",
-    "@nice-move/commitlint-config": "^0.4.0",
-    "@nice-move/eslint-config-base": "^0.5.75",
-    "@nice-move/prettier-config": "^0.5.1",
-    "ava": "^3.15.0",
-    "commitlint": "^15.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-ava": "^13.1.0",
-    "garou": "^0.3.4",
-    "prettier": "^2.5.1",
+    "@nice-move/cli": "^0.7.1",
+    "@nice-move/eslint-config-base": "^0.6.4",
+    "@nice-move/prettier-config": "^0.5.4",
+    "ava": "^4.1.0",
+    "eslint": "^8.12.0",
+    "eslint-plugin-ava": "^13.2.0",
+    "garou": "^0.4.4",
+    "prettier": "^2.6.1",
     "svgo": "^2.8.0"
   },
   "peerDependencies": {
@@ -60,9 +58,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "commitlint": {
-    "extends": "@nice-move/commitlint-config"
   },
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"

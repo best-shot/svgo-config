@@ -32,3 +32,7 @@ const config = require('svgo-config/lib/config.cjs');
 ```mjs
 import config from 'svgo-config/lib/config.mjs';
 ```
+
+```js
+import config from 'https://unpkg.com/svgo-config/lib/config.js';
+```
