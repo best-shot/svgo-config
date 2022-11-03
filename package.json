@@ -1,6 +1,6 @@
 {
   "name": "svgo-config",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "A svgo config to keep svg files clean",
   "license": "MIT",
   "author": {
@@ -34,26 +34,27 @@
   "type": "module",
   "scripts": {
     "lint:staged": "nice-move lint staged",
-    "prepare": "git config core.hooksPath .githooks",
+    "prepare": "nice-move git hooks",
     "prepublishOnly": "npm run lint:staged && npm test",
     "test": "ava --fail-fast"
   },
   "devDependencies": {
-    "@nice-move/cli": "^0.7.1",
-    "@nice-move/eslint-config-base": "^0.6.4",
-    "@nice-move/prettier-config": "^0.5.4",
-    "ava": "^4.1.0",
-    "eslint": "^8.12.0",
+    "@bring-it/npm": "^0.1.0",
+    "@nice-move/cli": "^0.10.1",
+    "@nice-move/eslint-config-base": "^0.9.1",
+    "@nice-move/prettier-config": "^0.8.0",
+    "ava": "^5.0.1",
+    "eslint": "^8.26.0",
     "eslint-plugin-ava": "^13.2.0",
-    "garou": "^0.4.4",
-    "prettier": "^2.6.1",
-    "svgo": "^2.8.0"
+    "garou": "^0.5.2",
+    "prettier": "^2.7.1",
+    "svgo": "^3.0.0"
   },
   "peerDependencies": {
-    "svgo": "^2.8.0"
+    "svgo": "^3.0.0"
   },
   "engines": {
-    "node": "^12.22.0 || ^14.17.0 || >=16.13.0"
+    "node": "^14.17.0 || ^16.13.0 || >=18.12.0"
   },
   "publishConfig": {
     "access": "public",

@@ -1,9 +1,7 @@
 'use strict';
 
 const test = require('ava');
-
 const { optimize } = require('svgo');
-
 const config = require('../lib/config.json');
 
 const source = `<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -33,13 +31,10 @@ const source = `<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.or
 </svg>
 `;
 
-const expected =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.083 67.977"><path fill="#eda921" stroke="#000" stroke-miterlimit="10" stroke-width="9.122" d="M13.745 30.137a5.38 5.38 0 1 0 0 7.608h40.392a5.38 5.38 0 1 0 0-7.608Z"/></svg>';
-
 test('base', (t) => {
   const result = optimize(source, config);
 
   t.falsy(result.error);
 
-  t.is(result.data, expected);
+  t.snapshot(result.data);
 });
