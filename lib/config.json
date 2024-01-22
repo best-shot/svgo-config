@@ -1,5 +1,6 @@
 {
   "multipass": true,
+  "floatPrecision": 4,
   "plugins": [
     {
       "name": "preset-default"
@@ -10,12 +11,10 @@
         "selector": "svg",
         "attributes": [
           "xml:space",
-          "id"
+          "id",
+          "baseProfile"
         ]
       }
-    },
-    {
-      "name": "sortAttrs"
     },
     {
       "name": "removeAttrs",
@@ -27,13 +26,13 @@
       }
     },
     {
-      "name": "removeDimensions"
-    },
-    {
       "name": "convertStyleToAttrs",
       "params": {
         "keepImportant": true
       }
+    },
+    {
+      "name": "sortAttrs"
     }
   ]
 }
