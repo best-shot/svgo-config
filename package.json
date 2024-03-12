@@ -1,6 +1,6 @@
 {
   "name": "svgo-config",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A svgo config to keep svg files clean",
   "license": "MIT",
   "author": {
@@ -39,28 +39,28 @@
     "test": "ava --fail-fast"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.5.1",
+    "@bring-it/npm": "^0.5.2",
     "@nice-move/cli": "^0.11.3",
     "@nice-move/eslint-config-base": "^0.11.1",
     "@nice-move/prettier-config": "^0.10.0",
-    "ava": "^6.1.0",
-    "eslint": "^8.56.0",
+    "ava": "^6.1.2",
+    "eslint": "^8.57.0",
     "eslint-plugin-ava": "^14.0.0",
-    "garou": "^0.6.23",
-    "prettier": "^3.2.4",
+    "garou": "^0.7.1",
+    "prettier": "^3.2.5",
     "svgo": "^3.2.0"
   },
   "peerDependencies": {
     "svgo": "^3.2.0"
   },
   "engines": {
-    "node": ">=18.12.0 || ^14.17.0 || ^16.13.0"
+    "node": ">=20.0.0 || ^16.13.0 || ^18.12.0"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "packageManager": "pnpm@8.14.1",
+  "packageManager": "pnpm@8.15.4",
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
   },
