@@ -1,6 +1,6 @@
 {
   "name": "svgo-config",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "A svgo config to keep svg files clean",
   "license": "MIT",
   "author": {
@@ -55,7 +55,7 @@
   },
   "packageManager": "pnpm@10.5.2",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.11.0"
   },
   "publishConfig": {
     "access": "public",
