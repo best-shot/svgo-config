@@ -3,6 +3,9 @@
   "floatPrecision": 4,
   "plugins": [
     {
+      "name": "removeTitle"
+    },
+    {
       "name": "preset-default"
     },
     {

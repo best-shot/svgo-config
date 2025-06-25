@@ -1,8 +1,7 @@
-'use strict';
+import test from 'ava';
+import { optimize } from 'svgo';
 
-const test = require('ava');
-const { optimize } = require('svgo');
-const config = require('../lib/config.json');
+import config from '../lib/config.mjs';
 
 const source = `<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <?xml version="1.0" encoding="utf-8"?>
@@ -33,8 +32,6 @@ const source = `<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.or
 
 test('base', (t) => {
   const result = optimize(source, config);
-
   t.falsy(result.error);
-
   t.snapshot(result.data);
 });

@@ -1,4 +1,4 @@
 #!/bin/sh
 
-pnpm run lint:staged
+pnpm run lint:staged || exit 1
 pnpm test

@@ -1,11 +1,10 @@
 {
   "name": "svgo-config",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "A svgo config to keep svg files clean",
   "license": "MIT",
   "author": {
-    "name": "Eric Chen",
-    "email": "airkro@qq.com"
+    "name": "Eric Chen"
   },
   "keywords": [
     "config",
@@ -16,7 +15,7 @@
   "homepage": "https://github.com/best-shot/svgo-config",
   "repository": {
     "type": "git",
-    "url": "https://github.com/best-shot/svgo-config.git"
+    "url": "git+https://github.com/best-shot/svgo-config.git"
   },
   "bugs": {
     "url": "https://github.com/best-shot/svgo-config/issues"
@@ -36,24 +35,23 @@
     "lint:staged": "nice-move lint staged",
     "prepare": "nice-move git hooks",
     "prepublishOnly": "pnpm run lint:staged && pnpm test",
-    "test": "ava --fail-fast"
+    "test": "ava --fail-fast",
+    "test:snapshot": "ava --fail-fast -u -w"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.6.0",
-    "@nice-move/cli": "^0.11.21",
-    "@nice-move/eslint-config-base": "^0.12.12",
-    "@nice-move/prettier-config": "^0.14.11",
-    "ava": "^6.2.0",
-    "eslint": "^9.22.0",
+    "@bring-it/npm": "^0.6.1",
+    "@nice-move/all-in-base": "^0.5.1",
+    "ava": "^6.4.0",
+    "eslint": "^9.29.0",
     "eslint-plugin-ava": "^15.0.1",
-    "garou": "^0.9.4",
-    "prettier": "^3.5.3",
-    "svgo": "^3.3.2"
+    "garou": "^0.9.11",
+    "prettier": "^3.6.0",
+    "svgo": "^4.0.0"
   },
   "peerDependencies": {
-    "svgo": "^3.3.2"
+    "svgo": "^4.0.0"
   },
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.12.3",
   "engines": {
     "node": ">=22.11.0"
   },
